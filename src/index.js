@@ -1,3 +1,5 @@
+import { refs } from './js/refs.js';
+
 /**
  * Створи список справ.
  * На сторінці є два інпути які має вводиться назва і текст задачі.
@@ -14,3 +16,16 @@
  * прибрати завдання зі списку.
  * Список із завданнями має бути доступним після перезавантаження сторінки.
  */
+
+refs.taskForm.addEventListener('submit', onSubmit);
+const TASKS = 'notes';
+function onSubmit(e) {
+  e.preventDefault();
+  const notes = {};
+  new FormData(e.currentTarget).forEach((value, name) => (notes[name] = value));
+  const tasks = JSON.parse(localStorage.getItem(TASKS)) || [];
+  console.log(tasks);
+  tasks.push(notes);
+
+  localStorage.setItem('TASKS', JSON.stringify(tasks));
+}
