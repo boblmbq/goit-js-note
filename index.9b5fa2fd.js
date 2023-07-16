@@ -1,2 +1,0 @@
-({taskForm:document.getElementById("task-form"),taskList:document.getElementById("task-list")}).taskForm.addEventListener("submit",(function(t){t.preventDefault();const e={};new FormData(t.currentTarget).forEach(((t,o)=>e[o]=t));const o=JSON.parse(localStorage.getItem("notes"))||[];console.log(o),o.push(e),localStorage.setItem("TASKS",JSON.stringify(o))}));
-//# sourceMappingURL=index.9b5fa2fd.js.map
