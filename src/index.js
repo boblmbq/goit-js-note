@@ -1,6 +1,6 @@
 import { refs } from './js/refs.js';
-
 import { onSubmit } from './js/onSubmit.js';
+import { renderCards } from './js/renderCards.js';
 
 /**
  * Створи список справ.
@@ -20,3 +20,4 @@ import { onSubmit } from './js/onSubmit.js';
  */
 
 refs.taskForm.addEventListener('submit', onSubmit);
+renderCards()
