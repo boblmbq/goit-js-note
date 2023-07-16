@@ -21,3 +21,11 @@ import { renderCards } from './js/renderCards.js';
 
 refs.taskForm.addEventListener('submit', onSubmit);
 renderCards()
+
+refs.taskList.addEventListener("click", onDeleteCard)
+
+function onDeleteCard(e) {
+  if (e.target.nodeName === "BUTTON") {
+    const id = e.target.dataset.id
+ }
+}
