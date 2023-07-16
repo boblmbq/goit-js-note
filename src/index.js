@@ -1,5 +1,7 @@
 import { refs } from './js/refs.js';
 
+import { onSubmit } from './js/onSubmit.js';
+
 /**
  * Створи список справ.
  * На сторінці є два інпути які має вводиться назва і текст задачі.
@@ -18,14 +20,3 @@ import { refs } from './js/refs.js';
  */
 
 refs.taskForm.addEventListener('submit', onSubmit);
-const TASKS = 'notes';
-function onSubmit(e) {
-  e.preventDefault();
-  const notes = {};
-  new FormData(e.currentTarget).forEach((value, name) => (notes[name] = value));
-  const tasks = JSON.parse(localStorage.getItem(TASKS)) || [];
-  console.log(tasks);
-  tasks.push(notes);
-
-  localStorage.setItem('TASKS', JSON.stringify(tasks));
-}
