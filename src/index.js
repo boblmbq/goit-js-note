@@ -1,6 +1,8 @@
 import { refs } from './js/refs.js';
 import { onSubmit } from './js/onSubmit.js';
 import { renderCards } from './js/renderCards.js';
+import { onDeleteCard } from './js/onDeleteCard.js';
+
 
 /**
  * Створи список справ.
@@ -24,8 +26,3 @@ renderCards()
 
 refs.taskList.addEventListener("click", onDeleteCard)
 
-function onDeleteCard(e) {
-  if (e.target.nodeName === "BUTTON") {
-    const id = e.target.dataset.id
- }
-}

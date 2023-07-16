@@ -12,3 +12,7 @@ export function getTasks() {
     return tasks;
 };
 
+export function deleteTask(id) {
+    const filterId = getTasks().filter(element => element.id !== id);
+    localStorage.setItem(TASKS, JSON.stringify(filterId))
+}
